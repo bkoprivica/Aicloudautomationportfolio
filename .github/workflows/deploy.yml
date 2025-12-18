@@ -8,11 +8,11 @@ jobs:
     - uses: actions/setup-node@v4
       with:
         node-version: 20
-    - run: npm ci --ignore-engines
+    - run: npm install --legacy-peer-deps
     - run: npm run build
     - uses: actions/upload-pages-artifact@v3
       with:
-        path: build
+        path: ./build
   deploy:
     needs: build
     runs-on: ubuntu-latest
@@ -22,5 +22,6 @@ jobs:
     steps:
     - uses: actions/upload-pages-artifact@v3
     - uses: actions/deploy-pages@v4
+
 
 
