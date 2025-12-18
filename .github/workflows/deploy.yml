@@ -1,4 +1,4 @@
-name: Deploy to Pages
+name: Deploy
 on: [push]
 jobs:
   build:
@@ -8,9 +8,19 @@ jobs:
     - uses: actions/setup-node@v4
       with:
         node-version: 20
-    - run: npm install
-    - run: npm run build -- --debug
+    - run: npm ci --ignore-engines
+    - run: npm run build
     - uses: actions/upload-pages-artifact@v3
       with:
-        path: ./dist
+        path: dist
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    steps:
+    - uses: actions/upload-pages-artifact@v3
+    - uses: actions/deploy-pages@v4
+
 
