@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
-import svgPaths from "./imports/svg-6sovak61ez";
-import imgAdobeExpressFile31 from "figma:asset/7c9a00e9efa8391de0b58d2b871dc3c31b986dce.png";
+import svgPaths from './imports/svg-6sovak61ez';
+import imgAdobeExpressFile31 from './assets/7c9a00e9efa8391de0b58d2b871dc3c31b986dce.png';
+//import imgAdobeExpressFile31 from "figma:asset/7c9a00e9efa8391de0b58d2b871dc3c31b986dce.png";
 
 function Navigation() {
   const [activeSection, setActiveSection] = useState('home');
