@@ -185,7 +185,7 @@ function HeroSection() {
         <div className="relative">
           <div
             className="w-full h-[600px] lg:h-[800px] bg-cover bg-center bg-no-repeat rounded-lg"
-            style={{ backgroundImage: `url('${imgAdobeExpressFile31}')` }}
+            style={{ backgroundImage: `url(${imgAdobeExpressFile31})` }}
           />
         </div>
       </div>
